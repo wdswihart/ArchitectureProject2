@@ -1,7 +1,5 @@
 import optimal
+import fifo
 
-def main():
-	print("main test")
-
-main()
-optimal.optimal()
+input = [1,2,3,4,1,2,5,1,2,3,4,5]
+#print(fifo.fifo(input, 5))
