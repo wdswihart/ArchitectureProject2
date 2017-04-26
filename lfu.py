@@ -8,7 +8,7 @@ def lfu(input, frames):
 	faults = 0 # Number of page faults
 
 	# Initialize frequencies for each page in input.
-	for page in input:
+	for page in set(input):
 		freq[page] = 0
 
 	for page in input:

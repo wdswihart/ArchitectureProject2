@@ -1,4 +1,4 @@
-# Least Recently Used
+# Least Recently Use
 # This algorithm takes out the least recently used page
 
 def lru(input, frames):
@@ -8,7 +8,7 @@ def lru(input, frames):
 	time = 1
 	
 	# Initialize stamps for each page in input.
-	for page in input:
+	for page in set(input):
 		stamps[page] = 0
 
 	for page in input:
