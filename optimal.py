@@ -18,8 +18,10 @@ def optimal(input, frames):
 				while i < len(pages):
 					if input.count(pages[i]) < input.count(pages[least]):
 						least = i
+					i += 1
+					
 				pages[least] = page
 
-		input.remove(page)
+		input[input.index(page)] = None
 
 	return faults
