@@ -2,10 +2,22 @@ import optimal
 import fifo
 import lfu
 import lru
+import weight
 
-input = [1,2,3,4,1,2,5,1,2,3,4,5]
+def test(input, frames):
+	print("FIFO", fifo.fifo(input, frames))
+	print("Optimal", optimal.optimal(input[:], frames))
+	print("LFU", lfu.lfu(input, frames))
+	print("LRU", lru.lru(input,frames))
+	print("Weighted", weight.weight(input, frames))
 
-#print(fifo.fifo(input, 5))
-#print(optimal.optimal(input, 3))
-#print(lfu.lfu(input, 3))
-print(lru.lru(input,3))
+input = []
+frames = 5
+
+with open("project_input.txt") as file:
+	lines = file.read().strip().split("\n")
+
+	for line in lines:
+		input.append(int(line))
+
+test(input, frames)

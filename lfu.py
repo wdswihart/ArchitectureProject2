@@ -12,12 +12,8 @@ def lfu(input, frames):
 		freq[page] = 0
 
 	for page in input:
-		print("page", page)
-		
 		freq[page] += 1
 
-		print("freqs", freq)
-		
 		if not page in pages:
 			faults += 1
 
@@ -33,6 +29,4 @@ def lfu(input, frames):
 
 				pages[least] = page
 
-		print("pages", pages)
-		
 	return faults

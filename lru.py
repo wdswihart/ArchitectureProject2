@@ -12,12 +12,8 @@ def lru(input, frames):
 		stamps[page] = 0
 
 	for page in input:
-		print("page", page)
-		
 		stamps[page] = time
 
-		print("Times", stamps)
-		
 		if not page in pages:
 			faults += 1
 
@@ -33,7 +29,6 @@ def lru(input, frames):
 
 				pages[least] = page
 
-		print("pages", pages)
 		time+=1
 		
 	return faults

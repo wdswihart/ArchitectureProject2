@@ -19,5 +19,4 @@ def fifo(input, frames):
 				first += 1
 				if first==frames:
 					first = 0
-		print(pages)
 	return faults
