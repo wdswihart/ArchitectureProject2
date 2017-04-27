@@ -1,7 +1,11 @@
 # Least Recently Use
 # This algorithm takes out the least recently used page
 
-def lru(input, frames):
+def lru(input, frames, doPrint):
+	# Print header.
+	if doPrint:
+		print 'Least Recently Used, Frames: {}'.format(frames)
+	
 	pages = [] # Pages stored from input
 	stamps = {} # Time stamps of pages in input.
 	faults = 0 # Number of page faults
@@ -30,6 +34,10 @@ def lru(input, frames):
 				pages[least] = page
 
 		time+=1
+
+		# Print status of pages.
+		if doPrint:
+			print pages
 		
 	return faults
 	

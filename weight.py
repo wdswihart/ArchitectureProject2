@@ -1,34 +1,43 @@
 # This file implements the Weighted algorithm, where pages are removed based
 # on a weight of frequency and most recent.
 
-import copy
-
 # calcWeight takes pages and stats and returns weights based
 # on the stats.
-def calcWeights(pages, stats):
+def calcWeights(pages, stats, freqWeight, timeWeight):
 	weights = [None]*len(pages) # Eventual weights list to return. Parallel to pages. Initialized to access elements out of order later.
 	values = [] # Values to be weighed. Parallel to pages.
 	temp = pages[:] # Copy to modify.
 	weight = len(pages) # Initialize maximum weight.
 
+	#print("pages", pages)
+
 	# Calculate values for weighing.
 	for page in pages:
-		values.append((len(pages) + 1) * stats[page][0] + stats[page][1])
+		values.append(freqWeight * stats[page][0] + timeWeight * stats[page][1])
+
+	#print("values", values)
 
 	# Weigh the values.
-	while len(temp) > 0:
-		i = values.index(max(values))
-		del values[i]
-		del temp[i]
-		weights[i] = weight
+	i = 0
+	while i < len(pages):
+		maxI = values.index(max(values))
+		values[maxI] = None
+		
+		weights[maxI] = weight
 		weight -= 1
+		
+		i += 1
 
 	return weights
 			
 
 # weighted algorithm will remove pages based on a weight calculated with
 # frequency and timestamp.
-def weight(input, frames):
+def weight(input, frames, freqWeight, timeWeight, doPrint):
+	# Print header.
+	if doPrint:
+		print 'Weighted, Frames: {}, FreqWeight: {}, TimeWeight: {}'.format(frames, freqWeight, timeWeight)
+	
 	pages = [] # Pages stored from input
 	stats = {} # Frequencies and timestamps for the pages in input
 	faults = 0 # Number of page faults
@@ -51,7 +60,7 @@ def weight(input, frames):
 				pages.append(page)
 			else:
 				leastI = 0
-				weights = calcWeights(pages, stats)
+				weights = calcWeights(pages, stats, freqWeight, timeWeight)
 
 				i = 1
 				while i < len(weights):
@@ -63,5 +72,9 @@ def weight(input, frames):
 
 		# Increment time.
 		time += 1
+
+		# Print status of pages.
+		if doPrint:
+			print pages
 				
 	return faults

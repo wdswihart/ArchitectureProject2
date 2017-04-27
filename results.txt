@@ -1,0 +1,84 @@
+Optimal:
+3 Frames: 186
+4 Frames: 145
+5 Frames: 127
+6 Frames: 110
+7 Frames: 90
+
+FIFO:
+3 Frames: 226
+4 Frames: 200
+5 Frames: 173
+6 Frames: 162
+7 Frames: 142
+
+Least Recently Used:
+3 Frames: 221
+4 Frames: 187
+5 Frames: 170
+6 Frames: 150
+7 Frames: 133
+
+Least Frequently Used:
+3 Frames: 194
+4 Frames: 158
+5 Frames: 138
+6 Frames: 118
+7 Frames: 101
+
+Weighted:
+3 Frames:
+FreqWeight 1: 191
+FreqWeight 2: 193
+FreqWeight 3: 193
+FreqWeight 4: 192
+FreqWeight 5: 192
+FreqWeight 6: 192
+FreqWeight 7: 193
+FreqWeight 8: 192
+FreqWeight 9: 195
+FreqWeight 10: 195
+4 Frames:
+FreqWeight 1: 162
+FreqWeight 2: 161
+FreqWeight 3: 158
+FreqWeight 4: 158
+FreqWeight 5: 156
+FreqWeight 6: 157
+FreqWeight 7: 158
+FreqWeight 8: 157
+FreqWeight 9: 157
+FreqWeight 10: 157
+5 Frames:
+FreqWeight 1: 142
+FreqWeight 2: 144
+FreqWeight 3: 141
+FreqWeight 4: 143
+FreqWeight 5: 143
+FreqWeight 6: 142
+FreqWeight 7: 140
+FreqWeight 8: 140
+FreqWeight 9: 140
+FreqWeight 10: 140
+6 Frames:
+FreqWeight 1: 129
+FreqWeight 2: 121
+FreqWeight 3: 120
+FreqWeight 4: 117
+FreqWeight 5: 118
+FreqWeight 6: 117
+FreqWeight 7: 118
+FreqWeight 8: 117
+FreqWeight 9: 117
+FreqWeight 10: 116
+7 Frames:
+FreqWeight 1: 114
+FreqWeight 2: 103
+FreqWeight 3: 101
+FreqWeight 4: 103
+FreqWeight 5: 101
+FreqWeight 6: 101
+FreqWeight 7: 98
+FreqWeight 8: 98
+FreqWeight 9: 98
+FreqWeight 10: 98

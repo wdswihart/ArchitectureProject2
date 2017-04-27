@@ -2,7 +2,11 @@
 
 # lfu runs the LFU page replacement algorithm on input with the
 # number of frames also as a paramter, and returns the number of faults.
-def lfu(input, frames):
+def lfu(input, frames, doPrint):
+	# Print header.
+	if doPrint:
+		print 'Least Frequently Used, Frames: {}'.format(frames)
+	
 	pages = [] # Pages stored from input
 	freq = {} # Frequencies of pages in input.
 	faults = 0 # Number of page faults
@@ -28,5 +32,9 @@ def lfu(input, frames):
 					i += 1
 
 				pages[least] = page
+
+		# Print status of pages.
+		if doPrint:
+			print pages
 
 	return faults
