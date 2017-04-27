@@ -6,16 +6,11 @@
 def calcWeights(pages, stats, freqWeight, timeWeight):
 	weights = [None]*len(pages) # Eventual weights list to return. Parallel to pages. Initialized to access elements out of order later.
 	values = [] # Values to be weighed. Parallel to pages.
-	temp = pages[:] # Copy to modify.
 	weight = len(pages) # Initialize maximum weight.
-
-	#print("pages", pages)
 
 	# Calculate values for weighing.
 	for page in pages:
 		values.append(freqWeight * stats[page][0] + timeWeight * stats[page][1])
-
-	#print("values", values)
 
 	# Weigh the values.
 	i = 0

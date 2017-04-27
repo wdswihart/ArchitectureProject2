@@ -82,7 +82,7 @@ with open('results.txt', 'w') as file:
 
 		j = 0
 		while j < 10:
-			file.write('FreqWeight {}: {}\n'.format(j+1, weightedFaults[i-3][j]))
+			file.write('FreqWeight {}: {}\n'.format(j+1git p, weightedFaults[i-3][j]))
 			j += 1
 
 		i += 1
