@@ -1,12 +1,19 @@
 # This file contains the function for the Optimal page replacement algorithm.
 
+import copy
+
 # optimal runs the Optimal page replacement algorithm on input with the
 # number of frames also as a paramter, and returns the number of faults.
-def optimal(input, frames):
+def optimal(input, frames, doPrint):
+	# Print header.
+	if doPrint:
+		print 'Optimal, Frames: {}'.format(frames)
+	
 	pages = [] # Pages stored from input
 	faults = 0 # Number of page faults
+	temp = copy.deepcopy(input) # Copy input as to not modify original.
 
-	for page in input:
+	for page in temp:
 		if not page in pages:
 			faults += 1
 
@@ -16,12 +23,16 @@ def optimal(input, frames):
 				i = 1
 				least = 0
 				while i < len(pages):
-					if input.count(pages[i]) < input.count(pages[least]):
+					if temp.count(pages[i]) < temp.count(pages[least]):
 						least = i
 					i += 1
 					
 				pages[least] = page
 
-		input[input.index(page)] = None
+		temp[temp.index(page)] = None
+
+		# Print status of pages.
+		if doPrint:
+			print pages
 
 	return faults

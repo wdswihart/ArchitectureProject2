@@ -4,7 +4,11 @@
 #when the frames becomes full, the algorithm loops back and starts replacing the,
 #first in if there is not a hit in the list
 
-def fifo(input, frames):
+def fifo(input, frames, doPrint):
+	# Print header.
+	if doPrint:
+		print 'FIFO, Frames: {}'.format(frames)
+	
 	pages = []
 	faults = 0
 	first = 0
@@ -19,4 +23,9 @@ def fifo(input, frames):
 				first += 1
 				if first==frames:
 					first = 0
+
+		# Print status of pages.
+		if doPrint:
+			print pages
+					
 	return faults
